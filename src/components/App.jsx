@@ -1,12 +1,23 @@
 import VideoList from './VideoList.js';
 import exampleVideoData from '../data/exampleVideoData.js';
-//import VideoListEntry from './VideoListEntry.js'; 
+// import VideoListEntry from './VideoListEntry.js'; 
 import VideoPlayer from './VideoPlayer.js'; 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      currentVideo: {},
+      allVideos: exampleVideoData //receive return videos from YouTube's API
+    };
   }
+
+  // onVideoEntryClick(event) {
+  //   this.setState({
+  //     currentVideo: event.something?
+  //   });
+  // }
   
   render() {
     return (
