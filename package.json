@@ -17,6 +17,8 @@
     "react-dom": "^0.14.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/register": "^7.0.0",
     "babel-cli": "^6.6.5",
     "babel-plugin-react": "1.0.0",
     "babel-preset-react": "^6.5.0",
