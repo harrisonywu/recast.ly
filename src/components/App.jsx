@@ -8,16 +8,16 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      currentVideo: {},
+      currentVideo: exampleVideoData[0],
       allVideos: exampleVideoData //receive return videos from YouTube's API
     };
+    this.onVideoEntryClick = this.onVideoEntryClick.bind(this);
   }
-
-  // onVideoEntryClick(event) {
-  //   this.setState({
-  //     currentVideo: event.something?
-  //   });
-  // }
+  onVideoEntryClick() {
+    this.setState({
+      currentVideo: exampleVideoData[1]
+    });
+  }
   
   render() {
     return (
@@ -29,12 +29,12 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.props.videos[0]} />
+            <VideoPlayer video={this.state.currentVideo} />
             {/* <div><h5><em>videoPlayer</em> view goes here</h5></div> */}
           </div>
           <div className="col-md-5">
             {/* <div><h5><em>videoList</em> view goes here</h5></div> */}
-            <VideoList videos={this.props.videos}/>
+            <VideoList videos={this.state.allVideos} clickFn={this.onVideoEntryClick}/>
           </div>
         </div>
       </div>
